@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pk.consistency.mapper.OrderInventoryMapper">
+
+    <select id="select" parameterType="int" resultType="com.pk.consistency.pojo.OrderInventory">
+        select * from order_inventory where id = #{id}
+    </select>
+
+    <update id="update" parameterType="com.pk.consistency.pojo.OrderInventory">
+        update order_inventory set count = #{count} where id = #{id}
+    </update>
+
+    <update id="insert" parameterType="com.pk.consistency.pojo.OrderInventory">
+        insert into order_inventory(`id`, `count`) values(#{id}, #{count});
+    </update>
+</mapper>
